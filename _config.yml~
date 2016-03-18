@@ -10,7 +10,7 @@ title: 你好，我是木子
 email: 921006756@qq.com
 description: > # this means to ignore newlines until "baseurl:"
   个人博客，一些项目实现，特效，生活总结，随笔。
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "blog" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
