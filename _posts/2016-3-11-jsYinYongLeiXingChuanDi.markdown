@@ -7,7 +7,7 @@ categories: javascript
 引用类型的传递方式与复制方式是一致的，
     a = {  };  b = a;   此时是这样的：
     
-![](post_img/clipboard.png)
+![](/post_img/clipboard.png)
     当修改对象内部属性值时，a和b依然都指向该对象，
     但是当改变a和b变量中任意一个变量的值时，比如b = new Object();使指向一个新对象，此时
     a不会受到影响，依然会指向之前的对象。
