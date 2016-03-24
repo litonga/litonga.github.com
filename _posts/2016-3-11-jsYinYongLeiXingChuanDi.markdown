@@ -8,17 +8,20 @@ categories: javascript
     a = {  };  b = a;   此时是这样的：
     
 ![](/post_img/clipboard.png)
-    当修改对象内部属性值时，a和b依然都指向该对象，
-    但是当改变a和b变量中任意一个变量的值时，比如b = new Object();使指向一个新对象，此时
-    a不会受到影响，依然会指向之前的对象。
 
-    此处区别于c语言的指针
- ** a->obj1
- ** b->obj1
- ** b->obj1.name ='name2'
- ** a ->obj1.name == 'name2' //true
- ** b ->obj2
- ** a ->obj1
+当修改对象内部属性值时，a和b依然都指向该对象，
+但是当改变a和b变量中任意一个变量的值时，比如b = new Object();使指向一个新对象，此时
+a不会受到影响，依然会指向之前的对象。
+
+此处区别于c语言的指针
+
+- a->obj1
+- b->obj1
+- b->obj1.name ='name2'
+- a ->obj1.name == 'name2' //true
+- b ->obj2
+-  a ->obj1
+ 
 总的来说就是，如果仅仅修改对象的属性，不会改变引用的指向，如果把整个对象换成一个新对象，则该b变量指向新对象，
 
 可以用数组实验一下，见下图
