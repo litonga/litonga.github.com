@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css二级菜单</title>
+	<style type="text/css">
+		body{
+			font:normal 12px/1.5em '微软雅黑';
+		}
+		ul{
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		.nav1{width:550px;overflow:auto;height:200px;}
+		.nav1>li{
+			width:100px;
+			height:18px;
+			position:relative;
+			float:left;
+		}
+		.nav1>li>ul{
+			width:100%;
+			display:none;
+			position:absolute;
+			top:29px;
+		}
+		.nav1 li a{
+			display:block;
+			height:100%;
+			padding:5px;
+			text-decoration:none;
+			text-align:center;
+			color:#777777;
+			border:1px solid #cccccc;
+			background:#ffffff;
+		}
+		.nav1 li ul li a{
+			border-top: 0;
+		}
+		.nav1 li ul li:first-child a{
+			border-top: 1px solid #cccccc;
+		}
+		.nav1 li:hover ul{
+			display:block;
+		}
+
+		.nav2,.nav2 ul{
+			width:150px;
+			border-bottom:1px solid #cccccc;
+		}
+		.nav2>li{
+			position:relative;
+		}
+		.nav2>li>ul{
+			display:none;
+			position:absolute;
+			left:149px;
+			top:0;
+		}
+		ul.nav2 li a{
+			display:block;
+			height:100%;
+			padding:5px;
+			text-decoration:none;
+			text-align:center;
+			color:#777777;
+			border:1px solid #cccccc;
+			border-bottom:0 none;
+			background:#ffffff;
+		}
+		.nav2 li:hover ul{
+			display:block;
+		}
+		/*针对IE6*/
+		* html ul li {
+			float:left;
+			zoom:1;
+		}
+		* html ul li a{
+			zoom:1;
+		}
+	</style>
+</head>
+<body>
+<ul class="nav1">
+	<li><a href="#">首页</a></li>
+	<li><a href="#">关于我们</a>
+		<ul>
+			<li><a href="#">我们的故事</a></li>
+			<li><a href="#">我们的团队</a></li>
+		</ul>
+	</li>
+	<li><a href="#">我们的服务</a>
+		<ul>
+			<li><a href="#">网页设计</a></li>
+			<li><a href="#">页面制作</a></li>
+			<li><a href="#">程序开发</a></li>
+		</ul>
+	</li>
+	<li><a href="#">联系我们</a>
+		<ul>
+			<li><a href="#">团队主力</a></li>
+			<li><a href="#">团队成员</a></li>
+			<li></li>
+		</ul>
+	</li>
+</ul>
+
+<ul class="nav2">
+	<li><a href="#">首页</a></li>
+	<li><a href="#">关于我们</a>
+		<ul>
+			<li><a href="#">我们的故事</a></li>
+			<li><a href="#">我们的团队</a></li>
+		</ul>
+	</li>
+	<li><a href="#">我们的服务</a>
+		<ul>
+			<li><a href="#">网页设计</a></li>
+			<li><a href="#">页面制作</a></li>
+			<li><a href="#">程序开发</a></li>
+		</ul>
+	</li>
+	<li><a href="#">联系我们</a>
+		<ul>
+			<li><a href="#">团队主力</a></li>
+			<li><a href="#">团队成员</a></li>
+			<li></li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

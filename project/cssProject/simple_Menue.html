@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  
+  <title>简洁导航栏</title>
+  <style type="text/css">
+  body{padding:0;margin:0;}
+  		#nav{
+			font-family:Arial;
+			font-size:14px;
+			text-align:right;
+			width:800px;
+			}
+		#nav ul{list-style-type:none;
+				margin:0px;
+				padding:0px;}
+		#nav li{border-bottom:1px solid #9f9fed;float:left;}
+		#nav li a{display:block;width:120px;
+				height:1em;padding:5px 5px 0.5em;
+				text-decoration:none;
+				border-left:12px solid #121271;
+				border-right:1px solid #121271;
+				}
+		#nav li a:link,#nav li a:visited{background-color:#1136c1;color:#fff;}
+		#nav li a:hover{background-color:#002099;
+						color:#ff00;
+						border-left:12px solid #cc00cc;}
+
+
+	#menu{width:120px;
+		  font:14px Arial;
+		  background:#ccc;
+		  padding:8px;
+		  margin:30px auto;
+		  }
+	#menu a,#menu a:visited{
+		display:block;
+		background:#fff;
+		padding:4px 8px;
+		color:#000;
+		text-decoration:none;
+		margin:8px 0;
+		border-left:8px solid #9ab;
+		border-right:8px solid #9ab;
+		}
+	#menu a:first-child,#menu a:last-child{margin:0px;}
+	#menu a:hover{colro:#f00;
+				border-left:8px solid #000;
+				border-right:8px solid #000;}
+	</style>
+ </head>
+ <body>
+ 	 <div id="nav">
+  <ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Content</a></li>
+	<li><a href="#">Web Dev</a></li>
+	<li><a href="#">Web Design</a></li>
+	<li><a href="#">Map</a></li>
+  </ul>
+</div>
+<br>
+   <div id="menu">
+	<a href="#">Home</a>
+	<a href="#">Content</a>
+	<a href="#">Web Dev</a>
+	<a href="#">Web Design</a>
+	<a href="#">Map</a>
+
+  </div>
+ 
+ </body>
+</html>
