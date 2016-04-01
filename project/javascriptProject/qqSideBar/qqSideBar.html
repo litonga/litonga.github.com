@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  
+  <title>Document</title>
+  <script type="text/javascript" src="js/jquery.js"> </script>
+  <style type="text/css">
+  body,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0}
+  ul,li{list-style:none;}
+  #other{
+	height:1000px;
+	background:#efefef;
+  }
+	#sideBar{
+		position:fixed;
+		right:-170px;
+		top:150px;
+		border:3px solid #00ccff;
+		background-color:#0cf;
+		border-radius:5px 0 0 5px;
+		width:200px;
+		height:250px;
+	}
+	#sideBar .leftSide{
+		width:37px;
+		height:250px;
+		background:url(images/but_bg.png) #00ccff no-repeat left center;
+	}
+	#sideBar .leftSide,#sideBar #qqList{
+		float:left;
+	}
+	#sideBar #qqList{
+		background:white;
+		width:160px;
+		height:231px;
+		border-radius:3px;
+		margin:10px 0;
+		text-align:center;
+	}
+	#sideBar #qqList h4,#sideBar #qqList span{
+		font-size:14px;
+		margin:10px 0;
+	}
+	#sideBar #qqList ul{
+		margin:10px 0;
+	}
+	#sideBar #qqList ul li{
+		border-bottom:1px solid #ccc;
+		padding:8px 0;
+		font-size:13px;
+		
+	}
+	#sideBar #qqList ul li a img{
+		vertical-align:middle;
+	}
+	#describe{
+		position:absolute;
+		top:200px;
+		left:100px;
+	}
+  </style>
+ </head>
+ <body>
+ 	<p id='describe'>请点击右侧侧边栏</p>
+ <!-- 侧边栏 begin-->
+ 	<div id="sideBar">
+		<div class="leftSide"></div>
+
+		<div id="qqList">
+		<h4>在线客服</h4>
+		<ul>
+			<li>售后客服：<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=921006756&amp;site=qq&amp;menu=yes"><img src="images/qq.png" width="70" height="20" border="0" alt=""></a></li>
+			<li>售后客服：<a href="#"><img src="images/qq.png" width="70" height="20" border="0" alt=""></a></li>
+			<li>售后客服：<a href="#"><img src="images/qq.png" width="70" height="20" border="0" alt=""></a></li>
+			<li>售后客服：<a href="#"><img src="images/qq.png" width="70" height="20" border="0" alt=""></a></li>
+		</ul>
+		<span>电话：16548321354</span>
+		</div>
+		
+ 	</div>
+ <!--  侧边栏end -->
+
+ <div id="other">
+ 
+ </div>
+
+
+ <script type="text/javascript">
+
+	$(document).ready(function(){
+		$('.leftSide').toggle(
+			function(){
+			$(this).css('backgroundPosition','-37px center').parent().animate({'right':'0'},200);
+			},
+			function(){
+			$(this).css('backgroundPosition','0 center').parent().animate({'right':'-170px'},200);
+			}		
+		);
+	
+	
+	});
+
+ </script>
+ </body>
+</html>
