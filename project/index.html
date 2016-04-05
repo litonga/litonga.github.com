@@ -4,7 +4,7 @@
   <meta charset="UTF-8">  
   <title>MOOZEE 个人作品</title>
   <style rel="stylesheet" type="text/css">
-  body{padding:0;margin:0;font-family: "Microsoft YaHei",serif-sans;}
+  body{padding:0;margin:0;font-family:Verdana Arial "Microsoft YaHei",serif-sans;}
   h1,h2,h3,h4,h5,h6,p{padding:0;margin:0;}
   ul,li{list-style: none;}
   .top{
@@ -21,62 +21,114 @@
    		margin-left:20px;
    		line-height: 50px;
    	}
-   	.top a:hover{
+   	.top a: hover{
    		text-decoration: underline;
    	}
-  .containt{
-  	  margin:20px;
-	  max-height:1000px;
+  .sideBar{
+  	  height:1000px;
+  	  width:200px;
 	  overflow:auto;
-	  border:1px solid #d0d0d0;
-	  background:white;
-	  border-radius:3px;
-	  font-family: Verdana Arial 'Microsoft YaHei';
+	  float:left;
+	  background-color: rgb(78, 183, 229);
+	  margin-right: -200px;
+  }
+  .sideBar a{
+  	color:white;
   }
     .title{
 		font-weight:bold;
 		font-size:16px;
 		line-height:30px;
 		padding-left:20px;
-		border-bottom: 1px solid #ccc;
+	}
+
+	/*iframe样式*/
+	#main{
+		float:left;
+		width:70%;
+		margin-left: 200px;
+		height:1000px;
+		max-height:100%;
+		border:0;
+	}
+
+	.active{
+		background-color:rgb(199, 69, 219);
 	}
   </style>
  </head>
  <body>
-
  	<div class="top"><a href="http://www.moozee.cn">MOOZEE</a><a href="http://www.moozee.cn/blog">blog</a></div>
 
- 	<div class="containt">
-		<p class="title">
+ 	<div class="sideBar">
+ 		<p class="title">
 		css  作品
 		</p>
-		<ul class="myul">
+ 		<ul class="myul">
 			<li><a target="_blank" href="cssProject/pinterest_like.html">css3 实现瀑布流</a></li>
-			<li><a target="_blank" href="cssProject/simple_Menue.html">简洁菜单</a></li>
-			<li><a target="_blank" href="cssProject/textAndPicture.html">图文布局</a></li>
-			<li><a target="_blank" href="cssProject/text-align.html">盒模型定位布局</a></li>
-			<li><a target="_blank" href="cssProject/second_level_menue.html">二级菜单</a></li>
-			<li><a target="_blank" href="cssProject/multLine_center.html">多行居中</a></li>
-			<li><a target="_blank" href="cssProject/style_abbr_list.html">样式缩写列表</a></li>
-			<li><a target="_blank" href="cssProject/self_adaption_doubleCol.html">双列自适应布局</a></li>
-			<li><a target="_blank" href="cssProject/border-radius_border.html">CSS3 border-radius 实现小图标</a></li>
-			
+			<li><a target="iframe_a" href="cssProject/simple_Menue.html">简洁菜单</a></li>
+			<li><a target="iframe_a" href="cssProject/textAndPicture.html">图文布局</a></li>
+			<li><a target="iframe_a" href="cssProject/text-align.html">盒模型定位布局</a></li>
+			<li><a target="iframe_a" href="cssProject/second_level_menue.html">二级菜单</a></li>
+			<li><a target="iframe_a" href="cssProject/multLine_center.html">多行居中</a></li>
+			<li><a target="iframe_a" href="cssProject/style_abbr_list.html">样式缩写列表</a></li>
+			<li><a target="iframe_a" href="cssProject/self_adaption_doubleCol.html">双列自适应布局</a></li>
+			<li><a target="iframe_a" href="cssProject/border-radius_border.html">CSS3绘制各种形状</a></li>
+			<li><a class="active" target="iframe_a" href="cssProject/css3_loading.html">CSS3载入动画</a></li>
 		</ul>
-	</div>	
- 	<div class="containt">
 		<p class="title">
 			javascript作品
 		</p>
 		<ul class="myul">
-			<li><a target="_blank" href="javascriptProject/blank_fill/blink_filling.html">英文选词填空功能实现</a></li>
-			<li><a href="javascriptProject/广告轮播/广告竖直滚动轮播.html">广告竖直滚动轮播</a></li>
-			<li><a href="javascriptProject/轮播渐显/轮播.html">渐显轮播</a></li>
-			<li><a href="javascriptProject/qqSideBar/qqSideBar.html">qq侧边栏</a></li>
-			<li></li>
-			<li></li>
-			<li></li>
+			<li><a target="iframe_a" href="javascriptProject/blank_fill/blink_filling.html">英文选词填空</a></li>
+			<li><a target="iframe_a" href="javascriptProject/广告轮播/广告竖直滚动轮播.html">广告竖直滚动轮播</a></li>
+			<li><a target="iframe_a" href="javascriptProject/轮播渐显/轮播.html">渐显轮播</a></li>
+			<li><a target="iframe_a" href="javascriptProject/qqSideBar/qqSideBar.html">qq侧边栏</a></li>
 		</ul>
  	</div>
 
+
+ 	<iframe id="main" src="cssProject/css3_loading.html" name="iframe_a">
+
+ 	</iframe>
+ 	<script type="text/javascript">
+		window.onload = function(){
+
+			var ul = document.getElementsByTagName('li');
+
+
+			function acitve(e){
+				for(var i = 0;i<ul.length;i++){
+					removeClass(ul[i].firstChild,'active');
+				}
+				console.log('you click a li');
+				addClass(e.target,'active'); //tag this li
+			}
+
+			for(var i=0;i<ul.length;i++){
+				ul[i].onclick = acitve;
+			}
+
+
+		    function hasClass(element, className) {
+		        return element.className.match(new RegExp('(\\s|^)'+className+'(\\s|$)'));
+		    }
+		    //添加一个class，如果不存在的话
+		    function addClass(element, className) {
+		        if (!hasClass(element, className)) {
+		            element.className += " "+className;
+		        }
+		    }
+		    //删除一个class，如果存在的话
+		    function removeClass(element, className) {
+		        if (hasClass(element, className)) {
+		            element.className = element.className.replace(
+		                    new RegExp('(\\s|^)'+className+'(\\s|$)'),' ');
+		        }
+		    }
+
+		}
+
+	</script>
  </body>
 </html>
