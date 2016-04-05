@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  
+  <title>广告竖直滚动轮播</title>
+	<style type="text/css">
+		body,ul,li,p{margin:0;padding:0}
+		ul,li{list-style:none;}
+		#box{
+			width:670px;
+			height:240px;
+			background:#ccc;
+			position:relative;
+			overflow:hidden;
+			margin:100px auto;
+		}
+
+		#box .scroll{
+			width:670px;
+			height:2400px;
+			position:absolute;
+			left:0;top:0;
+		}
+		#box .scroll img{display:block;}
+		/*数字标号按钮*/
+		#box #numIndex{
+			position:absolute;
+			right:20px;
+			top:208px;
+		}
+		#box #numIndex li{
+			background:#444;
+			width:20px;
+			height:20px;
+			border:0px solid #444;
+			border-radius:10px;
+			font-size:12px;
+			color:#fff;
+			font-family:Microsoft YaHei;
+			line-height:20px;
+			text-align:center;
+			float:left;
+			margin:3px;
+			cursor:pointer;
+		}
+		/*数字标号按钮--end*/
+	</style>
+ </head>
+ <body>
+ <div id="box" class="">
+	<div id="" class="scroll">
+		<img src="images/1.jpg" width="670" height="240" border="0" alt="">
+		<img src="images/2.jpg" width="670" height="240" border="0" alt="">
+		<img src="images/3.jpg" width="670" height="240" border="0" alt="">
+		<img src="images/4.jpg" width="670" height="240" border="0" alt="">
+		<img src="images/5.jpg" width="670" height="240" border="0" alt="">
+		<img src="images/6.jpg" width="670" height="240" border="0" alt="">
+	</div>
+
+		<ul id="numIndex" class="">
+			<li style="background-color:#ea5b5f">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+
+ </div>
+  <script type="text/javascript" src="js/jquery.js">  </script>
+  <script type="text/javascript" >
+  /*console.log兼容*/
+		if(typeof console == 'undefined'){
+			var console={
+				log:function(str){
+					alert(str);
+				}
+			}
+		}
+	$(document).ready(function(){
+		
+
+
+
+		var _index=0;
+		var stopTime;
+		$('#numIndex>li').click(function(){
+			_index=$(this).index();
+			$(this).css('backgroundColor','#ea5b5f').siblings().removeAttr('style');
+			$('.scroll').animate({top:-240*_index+'px'},1000);
+		});
+
+		$('.scroll').hover(
+		function(){
+			console.log('停止自动滚动');
+			clearInterval(stopTime);  //停止自动轮播
+		},function(){
+			autoPlay();   //自动轮播
+		});
+
+		function autoPlay(){
+			console.log('开始自动滚动');
+			stopTime=setInterval(function(){
+				_index++;
+				if(_index>5){_index=0;}
+				console.log(_index);
+				$('#numIndex>li').eq(_index).css('backgroundColor','#ea5b5f').siblings().removeAttr('style');
+				$('.scroll').animate({top:-240*_index+'px'},1000);
+				
+			},3000);
+		}
+		autoPlay();
+	});
+  </script>
+ </body>
+</html>
