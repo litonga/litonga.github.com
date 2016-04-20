@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script src="base.js"></script>
+  <script src="demo.js"></script>
+  <title>遮罩层登录窗口 </title>
+     <link type="text/css" href="css/index.css" rel="stylesheet">
+ </head>
+ <body>
+  <div id="header">
+      <div id="menu">菜单
+          <ul id="menuList">
+              <li>新建</li>
+              <li>保存</li>
+              <li>另存</li>
+              <li>退出</li>
+          </ul>
+      </div>
+      <div id="loginNav">登录</div>
+  </div>
+  <div id="login">
+      <h2>用户登录<span id="loginClose">关闭</span></h2>
+      <form method="get">
+          <label for="user">账号：</label><input type="text" id="user" name="user"/><br/>
+          <label for="pass">密码：</label><input type="text" id="pass" name="pass"/><br/>
+          <input id="submit" type="submit" value="登录"/><a href="#">忘记密码</a>
+      </form>
+  </div>
+<p>说明：
+  点击右上角登录按钮，弹出遮罩层登录窗口，可以进行拖拽
+</p>
+  <div id="screen"></div>
+  <script type="text/javascript">
+      window.onload=function(){
+        //下拉列表
+        $().getId('menu').hover(function(){
+             //alert("鼠标进入");
+             $().getId("menuList").show();
+         },function(){
+             //alert("移出");
+             $().getId("menuList").hide();
+         });
+          //登录窗口居中
+          var login= $().getId("login");
+          $().getId("login").center(300,280).resize(function(){
+              login.center(300,280)
+          });
+          //登录窗口弹出与关闭
+          $().getId("loginNav").click(function(){
+              login.show();
+              $().getId('screen').show();
+                  }
+          );
+          $().getId("loginClose").click(function(){
+              login.hide();
+              $().getId('screen').hide();
+          });
+          //拖拽
+          var moveHand = document.getElementById("login").children[0]; //登录窗口标题
+          var loginWindow = document.getElementById("login");
+          moveHand.onmousedown = function(evt){
+              var e=evt||window.event;
+              //console.log("鼠标点下");
+              //console.log(e.clientX+","+e.clientY);
+              //console.log(this.parentNode.offsetLeft);
+              var leftWidth= e.clientX-this.parentNode.offsetLeft;//鼠标到窗口左侧的距离
+              var topHeight = e.clientY-this.parentNode.offsetTop;//鼠标到窗口顶部的距离
+              //console.log(loginWindow.style.top);
+              document.onmousemove=function(evt){
+                  var e2=evt||window.event;
+                  loginWindow.style.top= e2.clientY-topHeight+"px";
+                  loginWindow.style.left= e2.clientX-leftWidth+"px";
+              };
+              document.onmouseup = function(){
+                  this.onmousemove=null;
+                  this.onmouseup=null;
+                  //console.log("鼠标放开");
+              };
+          };
+
+
+      }
+  </script>
+ </body>
+</html>
