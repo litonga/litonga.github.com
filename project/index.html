@@ -58,7 +58,6 @@
 	#main{
 		width:100%;
 		height:1000px;
-		max-height:100%;
 		border:0;
 	}
 
@@ -151,8 +150,8 @@
 		</p>
  		<ul class="myul container">
 
-			<li><a target="_blank" href="cssProject/pinterest_like.html">
-				<img src="images/pul.png"><span><span>css3 实现瀑布流</span></a>
+			<li><a target="iframe_a" href="cssProject/pinterest_like.html">
+				<img src="images/pul.png"><span>css3 实现瀑布流</span></a>
 			</li>
 			<!-- <li><a target="iframe_a" href="cssProject/simple_Menue.html">
 				<img src="images/stay.png"><span>简洁菜单</span></a></li>
@@ -207,6 +206,10 @@
 				//页面滚动到iframe
 				//console.log(iframe.offsetTop);
 				scrollToAnimation(iframe.offsetTop,10);
+				console.log(iframe.firstChild);
+				console.log(iframe.childNodes[1]);
+				console.log(iframe.lastChild);
+				// iframe.style.height = iframe.
 			
 
 			}
