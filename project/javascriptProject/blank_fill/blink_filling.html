@@ -179,7 +179,7 @@
          for(var i= 0,len=wordBlanks.length; i<len; i++){
             if(wordBlanks[i].getAttribute('data-num') === ent.target.parentNode.getAttribute('data-num')){
                 //滚动到视口
-                wordBlanks[i].scrollIntoView();
+                wordBlanks[i].scrollIntoView(false);
                 //激活该空格
                 handleBlank(wordBlanks[i]);
 
