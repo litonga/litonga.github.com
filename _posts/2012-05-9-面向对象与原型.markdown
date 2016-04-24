@@ -1,0 +1,57 @@
+---
+layout: post
+title:  面向对象与原型
+date:   2012-05-7 18:08:48 +0800
+categories: javascript
+---
+
+
+每个函数创建后都有一个prototype属性指向该函数的原型。
+
+可以为该原型添加属性和方法，从而使由该函数创建的实例对象共享哪些属性和方法。
+function Person(){}
+
+Person.prototype.sayName=function(){
+        alert(this.name)
+}
+var p1 = new Person();
+
+获取实例的原型：
+Object . getPrototypeOf("p1") == Person.prototype  //true
+判断一个实例是否属于一个原型：
+Person.prototype.isPrototypeOf("p1");   //true
+判断实例是否有自己的属性:
+p1.hasOwnProperty("name");        //false
+返回可由可枚举的属性组成的数组：
+Object.keys(Person.prototype);    //["sayName"]
+返回对象的所有属性：
+Object . getOwnPropertyNames(p1);      //[]
+Object . getOwnPropertyNames(Person.prototype);    //["constructor", "sayName",]
+Object.getOwnPropertyNames(Array.prototype)  //试试
+原型与in
+
+
+
+in操作符在访问到对象属性后返回true，(无论该属性在实例中还是在原型中)
+p1.name="12"
+alert("name" in p1);   //true
+
+应用：
+function hasProtypeProprety(obj,property){
+    return  !obj.hasOwnProperty(proterty) && ( property in obj );
+}
+
+
+重写原型对象：
+    function Person(){}
+Person.prototype={
+    constructor : Person,       //重置原型对象会导致constructor变为可枚举的。
+    name: "litong",
+    sayName : function(){alert(this,name)}
+};
+
+使用ES5中的Object.defineProperty()方法重设构造函数
+Object.defineProperty(Person.prototype, "constructor",{
+        enumeralbe:false;
+        value : Person
+});

@@ -1,0 +1,67 @@
+---
+layout: post
+title:  string对象
+date:   2012-05-7 18:08:48 +0800
+categories: javascript
+---
+string对象
+
+静态方法：
+String.fromCharCode(numx,numx,numx); //参数为字符编码
+
+
+以下为实例方法，由字符串实例调用：
+1.样式方法
+```javascript
+var str = "hello world";
+str.anchor() //创建HTML锚
+str.big()   //大字体显示字符串；
+str.blink() //闪动显示字符串，所有浏览器都不支持。
+str.bold()  //粗体显示字符串；
+str.fontcolor("red"); //指定颜色
+str.fontsize(20);  //指定尺寸
+str.italics()；//斜体显示
+str.link("http://www.baidu.com"); 显示为连接
+str.strike();//删除线
+str.sup();  //上标
+str.sub();   //下标
+str.toLocaleLowerCase()  //转换为本地小写
+str.toLocaleUpperCase()   //本地大写
+str.toLowerCase()  //小写
+str.toUpperCase()  //大写
+str.fixed(); //打印机字体
+```
+
+2.操作方法：
+```javascript
+str.charAt(0);  //返回索引为0的字符
+str.charCodeAt(0);  //返回索引为0的字符编码
+str.concat("abc","def"); //连接多个字符串，可以使用+替换该方法
+str.indexOf("a",0); //从位置0处开始检索，返回字符a的索引值
+字符可以是子串
+str.lastIndexOf("a",str.length-1);  //从尾部向前检测，返回最靠近尾 
+部的a的索引值
+str.slice(n1,n2)  //提取str中n1到n2的字符串，不包含n2位置上的字符
+
+str.substr(0,3) //抽取从0开始的长度为3的子串
+str.sbustring(0,3)  //返回从0开始到2的子串，不包括3。参数不能为负 
+值。
+
+```
+3可使用正则表达式的
+方法：
+```javascript 
+str.split(" ")  //使用参数将字符串分割为数组,参数若为空则返回一个 
+//长度为1的数组，参数为空字符则返回长度为字符串长度的数组。
+
+str.match(pattern);  //返回按照匹配模式匹配到的子串或null，返回数组
+str.replace(pattern,str1);  //用str1替换匹配到的子串
+```
+
+replace方法的第二个参数可已使用特殊字符序列：
+例如：
+```javascript
+var str = 'cat, bat, eat, mat';
+var result = str.replace(/(.at)/g,'hello $1');
+result  //hello cat, hello bat, hello eat, hello mat;
+```
