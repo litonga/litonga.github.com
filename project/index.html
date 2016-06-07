@@ -99,12 +99,13 @@
 		display:none;
 		position:fixed;
 		background:#FF6262;
-		width:24px;
-		height:115px;
+		width:18px;
+		height:111px;
 		text-align: center;
 		right:20px;
 		bottom:100px;
 		cursor:pointer;
+		padding:8px;
 		border-radius: 5px;
 	}
 
@@ -173,7 +174,7 @@
 				<img src="images/stay.png"><span>CSS3载入动画</span></a></li>
 		</ul>
  	</div>
- 	<div id="backToTop">^回到顶部</div>
+ 	<div id="backToTop">返回作品列表</div>
  	<iframe id="main" src="cssProject/css3_loading.html" name="iframe_a">
 
  	</iframe>
@@ -221,11 +222,25 @@
 
 
 			//回到顶部按钮，
-			var bToTop = document.getElementById('backToTop');
+			$("#backToTop").click(function(){
+				var tag = setInterval(function(){
+					console.log(pageYOffset);
+					scrollBy(0,-60)
+					if(pageYOffset<=50){
+						clearInterval(tag);
+						tag = setInterval(function(){
+							console.log(pageYOffset);
+							scrollBy(0,-6);
+							if(pageYOffset<=0){
+								clearInterval(tag);
+								//alert("成功到达");
+							}
+						},20);
+					}
+				},20);		
+			});
 
-			bToTop.onclick = function(){
-				scrollTo(0,0);
-			}
+			var bToTop = document.getElementById('backToTop');
 			window.onscroll = function(){
 				if(pageYOffset>=600){
 					top.style.display='none';
