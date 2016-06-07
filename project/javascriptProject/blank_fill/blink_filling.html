@@ -174,9 +174,13 @@
         }
         addClass(ent.target.parentNode,'havePoint'); //为li添加havePoint类
 
+
          var wordBlanks = document.getElementsByClassName('wordBlank');
          for(var i= 0,len=wordBlanks.length; i<len; i++){
-            if(wordBlanks[i].getAttribute('data-num') === ent.target.parentNode.getAttribute('data-num')){handleBlank(wordBlanks[i]);
+            if(wordBlanks[i].getAttribute('data-num') === ent.target.parentNode.getAttribute('data-num')){
+                //激活该空格
+                handleBlank(wordBlanks[i]);
+
             }else{
                 removeClass(wordBlanks[i],'blue');
             }
