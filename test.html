@@ -42,13 +42,13 @@
 		3.Node type
 	*7-25----end************************************/
 
-	var times = null;
+	var times = times = setInterval(function(){document.body.classList.toggle("red")},100);
 	document.onclick=function(){
 		if(typeof times == 'number'){
 			clearInterval(times);
 			times = null;
 		}else{
-			times = setInterval(function(){document.body.classList.toggle("red")},1);
+			times = setInterval(function(){document.body.classList.toggle("red")},100);
 		}
 		
 		
