@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title>7-22学习日</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+      .red{background-color:#84bfb1;}
+	</style>
+</head>
+<body class="red">
+
+
+<script type="text/javascript">
+    /* *7-18---begin************************************
+		1.传入对象参数，输出对象的name属性值and age 属性值。
+		2.如何确定一个变量的值是数组？
+		3.toString与toLocalString的区别？
+		4.数组有哪些方法？
+		5.数组的sort()方法有什么问题？
+		6.使用数组的迭代方法求和。
+		7.怎么创建日期类型及如何格式化日期？
+		8.函数表达式与函数声明的差异？
+		9.函数怎么作为值来传递？
+		10.create a function can sort a Object Array by the object's property;
+		11.create a factorial function
+	**7-18----end**************************************/
+
+	/*7-20----begin************************************
+		1.工厂模式
+		2.构造函数模式
+	**7-20----end**************************************/
+
+	/*7-22----begin***********************************
+		1.多窗口（框架） 传值；
+		2.提取url中的参数。
+		3.Node type
+	*7-22----end************************************/
+
+	/*7-25----begin***********************************
+		1.动态载入script,封装兼容函数。
+		2.动态载入style，
+		3.Node type
+	*7-25----end************************************/
+
+	var times = null;
+	document.onclick=function(){
+		if(typeof times == 'number'){
+			clearInterval(times);
+			times = null;
+		}else{
+			times = setInterval(function(){document.body.classList.toggle("red")},1);
+		}
+		
+		
+	}
+
+
+
+
+</script>
+</body>
+</html>
