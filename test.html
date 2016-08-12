@@ -1,62 +1,71 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>点一点</title>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<title>随机马赛克</title>
+            <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<script src="jquery-1.10.1.min.js" type="text/javascript"></script>
 	<style type="text/css">
-      .red{background-color:#84bfb1;}
+		#wrap1{
+		  /*width:600px;*/
+		  overflow:hidden;
+                            height:1000px;
+                          /*border:1px solid #ccc;*/
+		}
+		.snake{
+			background:black;
+		}
+		#wrap1 div{
+			height:1000px;
+			width: 1px;
+			float:left;
+		}
+
+                        #wrap2{
+                            position:absolute;
+                            left:0;
+                            top:0;
+                        }
+                        #wrap2 div{
+                            height:1px;
+                            width: 1000px;
+
+                        }
+
 	</style>
 </head>
-<body class="red">
+<body>
+	<div id='wrap1'>		
+	</div>
+            <div id='wrap2'>        
+            </div>
+	<script type =' text/javascript'>
+                        $(function(){
+                               for(var i=0;i<800;i++){
+                                if(Math.random()>0.5)
+                                    {$('#wrap1,#wrap2').append($('<div></div>'));}
+                                else{
+                                $('#wrap1,#wrap2').append($('<div class="snake"></div>'));                                    
+                                }
 
+                            }  
+                            function shaning(){
+                                setInterval(function( ){
+                                                $('#wrap1 div,#wrap2 div').each(function(i,e){
+                                                    if(Math.random()>0.5){
+                                                        $(e).addClass('snake');
+                                                    }else{
 
-<script type="text/javascript">
-    /* *7-18---begin************************************
-		1.传入对象参数，输出对象的name属性值and age 属性值。
-		2.如何确定一个变量的值是数组？
-		3.toString与toLocalString的区别？
-		4.数组有哪些方法？
-		5.数组的sort()方法有什么问题？
-		6.使用数组的迭代方法求和。
-		7.怎么创建日期类型及如何格式化日期？
-		8.函数表达式与函数声明的差异？
-		9.函数怎么作为值来传递？
-		10.create a function can sort a Object Array by the object's property;
-		11.create a factorial function
-	**7-18----end**************************************/
+                                                        $(e).removeClass('snake');
+                                                    }
+                                                });                                    
+                                
+                             },100);
+                            }
+                            shaning();
 
-	/*7-20----begin************************************
-		1.工厂模式
-		2.构造函数模式
-	**7-20----end**************************************/
+                        });
+	</script>
 
-	/*7-22----begin***********************************
-		1.多窗口（框架） 传值；
-		2.提取url中的参数。
-		3.Node type
-	*7-22----end************************************/
-
-	/*7-25----begin***********************************
-		1.动态载入script,封装兼容函数。
-		2.动态载入style，
-		3.Node type
-	*7-25----end************************************/
-
-	var times = times = setInterval(function(){document.body.classList.toggle("red")},200);
-	document.onclick=function(){
-		if(typeof times == 'number'){
-			clearInterval(times);
-			times = null;
-		}else{
-			times = setInterval(function(){document.body.classList.toggle("red")},200);
-		}
-		
-		
-	}
-
-
-
-
-</script>
 </body>
 </html>
