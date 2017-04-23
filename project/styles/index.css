@@ -1,0 +1,144 @@
+body{padding:0;margin:0;font-family:'Microsoft YaHei';}
+h1,h2,h3,h4,h5,h6,p,ul,li{padding:0;margin:0;}
+ul,li{list-style: none;}
+
+
+body{
+	height:100%;
+	width: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+.mainPannel{
+	width: 200%;
+	height:100%;
+}
+.leftPannel, .rightPannel{
+	overflow: scroll;
+	float: left;
+	width:50%;
+	height:100%;
+}
+
+.leftPannel {
+	background:#ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #top{
+  	width: 100%;
+  	height:50px;
+  	background-color:#3d3d3d;
+  	color:white;
+  	position:fixed;
+  	top:0;
+  }
+  #top a{
+  		color:white;
+   		font-size:26px;
+   		text-decoration: none;
+   		display:inline-block;
+   		margin-right:20px;
+   		line-height: 50px;
+   	}
+   	#top a:hover{
+   		text-decoration: underline;
+   	}
+
+   	#CV{/*个人简历链接*/
+   		float:right;
+   	}
+  .projectItem{
+  	  margin-top:50px;
+  	  padding-top:20px;
+  	  height:100%;
+  	  width: 100%;
+	  background-color:#FDFFBD;
+	  margin-bottom:50px;
+  }
+  .projectItem a{
+  	color:#5F5F5F;
+  	font-size:13px;
+  	line-height:20px;
+  	text-decoration:none;
+  } 
+  .projectItem a:hover{
+  	text-decoration: underline;
+  }
+    .title{
+		font-weight:bold;
+		font-size:16px;
+		line-height:30px;
+		padding-left:20px;
+		clear:both;
+	}
+
+	/*iframe样式*/
+	#main{
+		width:100%;
+		height:1000px;
+		border:0;
+	}
+
+	/*新的布局****************************/
+	.container{
+		width:960px;
+		margin:0 auto;
+	}
+	.myul{
+		overflow:auto;
+	}
+
+	.myul li {
+		width:188px;
+		height:128px;
+		padding:10px;
+		overflow:hidden;
+		background-color:white;
+		margin:8px;
+		border-radius: 3px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+		float:left;
+	}
+	.myul li a img{
+		display:block;
+		width:180px;
+	}
+	.myul li a span{
+		display:block;
+		text-align:center;
+
+	}
+	.myul li:hover,.active{
+		border-color:#75CC09;
+		background-color:#E2FFA7;
+	}
+	#backToTop{
+		display:none;
+		position:fixed;
+		background:#FF6262;
+		width:18px;
+		height:111px;
+		text-align: center;
+		right:20px;
+		bottom:100px;
+		cursor:pointer;
+		padding:8px;
+		border-radius: 5px;
+	}
+

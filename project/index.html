@@ -3,135 +3,25 @@
  <head>
   <meta charset="UTF-8">  
   <title>MOOZEE 个人作品</title>
-  <style rel="stylesheet" type="text/css">
-  body{padding:0;margin:0;font-family:'Microsoft YaHei';}
-  h1,h2,h3,h4,h5,h6,p,ul,li{padding:0;margin:0;}
-  ul,li{list-style: none;}
-  #top{
-  	width: 100%;
-  	height:50px;
-  	background-color:#3d3d3d;
-  	color:white;
-  	position:fixed;
-  	top:0;
-  }
-  #top a{
-  		color:white;
-   		font-size:26px;
-   		text-decoration: none;
-   		display:inline-block;
-   		margin-right:20px;
-   		line-height: 50px;
-   	}
-   	#top a:hover{
-   		text-decoration: underline;
-   	}
-
-   	#CV{/*个人简历链接*/
-   		float:right;
-   	}
-  .projectItem{
-  	  margin-top:50px;
-  	  padding-top:20px;
-  	  height:1000px;
-	  overflow:auto;
-	  background-color:#FDFFBD;
-	  margin-bottom:50px;
-  }
-  .projectItem a{
-  	color:#5F5F5F;
-  	font-size:13px;
-  	line-height:20px;
-  	text-decoration:none;
-  } .projectItem a:hover{
-  	text-decoration: underline;
-  }
-    .title{
-		font-weight:bold;
-		font-size:16px;
-		line-height:30px;
-		padding-left:20px;
-		clear:both;
-	}
-
-	/*iframe样式*/
-	#main{
-		width:100%;
-		height:1000px;
-		border:0;
-	}
-
-	/*新的布局****************************/
-	.container{
-		width:960px;
-		margin:0 auto;
-	}
-	.myul{
-		overflow:auto;
-	}
-
-	.myul li {
-		width:188px;
-		height:128px;
-		border:1px solid #ccc;
-		padding:10px;
-		overflow:hidden;
-		background-color:white;
-		margin:8px;
-		border-radius: 3px;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-		float:left;
-	}
-	.myul li a img{
-		display:block;
-		width:180px;
-	}
-	.myul li a span{
-		display:block;
-		text-align:center;
-
-	}
-	.myul li:hover,.active{
-		border-color:#75CC09;
-		background-color:#E2FFA7;
-	}
-	#backToTop{
-		display:none;
-		position:fixed;
-		background:#FF6262;
-		width:18px;
-		height:111px;
-		text-align: center;
-		right:20px;
-		bottom:100px;
-		cursor:pointer;
-		padding:8px;
-		border-radius: 5px;
-	}
-
-
-  </style>
-  <script type="text/javascript" src="js/jquery-v1.10.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/index.css">
+  <script src="https://cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
  </head>
  <body>
- 	<div id="top">
- 		<div class="container">
+
+ 		<div id="top">
+ 			<div class="container">
  			<a href="http://www.moozee.cn">MOOZEE</a>
  			<a href="http://blog.csdn.net/makel12">CSDN blog</a>
  			<a id="CV" href="http://www.moozee.cn/resume.html">个人简历</a>
- 		</div>
- 		
- 	</div>
+	 		</div>
+	 	</div>
 
- 	<div class="projectItem">
- 		<p class="title container">
-			javascript作品
-		</p>
+ 		<div class="projectItem">
+ 		<p class="title container">个人demo</p>
 		<ul class="myul container">
 			<li><a target="iframe_a" href="javascriptProject/blank_fill/blink_filling.html">
 				<img src="images/fill_blank.png"><span>英文选词填空</span></a>
 			</li>
-			
 			<li><a target="iframe_a" href="javascriptProject/addItemLTR/index.html">
 				<img src="images/addItem.png"><span>添加条目</span></a>
 			</li>
@@ -144,135 +34,25 @@
 				<img src="images/stay.png"><span>qq侧边栏</span></a></li>
 			
 			<li><a target="iframe_a" href="javascriptProject/loadWindow/index.html">
-				<img src="images/stay.png"><span>登录窗口遮罩</span></a></li>
-		</ul>
- 		<p class="title container">
-		css  作品
-		</p>
- 		<ul class="myul container">
-
+				<img src="images/stay.png"><span>登录窗口遮罩</span></a>
+			</li>
 			<li><a target="iframe_a" href="cssProject/pinterest_like.html">
 				<img src="images/pul.png"><span>css3 实现瀑布流</span></a>
 			</li>
-			<!-- <li><a target="iframe_a" href="cssProject/simple_Menue.html">
-				<img src="images/stay.png"><span>简洁菜单</span></a></li>
-			<li><a target="iframe_a" href="cssProject/textAndPicture.html">
-				<img src="images/stay.png"><span>图文布局</span></a></li>
-			<li><a target="iframe_a" href="cssProject/text-align.html">
-				<img src="images/stay.png"><span>盒模型定位布局</span></a></li>
-			<li><a target="iframe_a" href="cssProject/second_level_menue.html">
-				<img src="images/stay.png"><span>二级菜单</span></a></li>
-			<li><a target="iframe_a" href="cssProject/multLine_center.html">
-				<img src="images/stay.png"><span>多行居中</span></a></li>
-			<li><a target="iframe_a" href="cssProject/style_abbr_list.html">
-				<img src="images/stay.png"><span>样式缩写列表</span></a></li>
-			<li><a target="iframe_a" href="cssProject/self_adaption_doubleCol.html">
-				<img src="images/stay.png"><span>双列自适应布局</span></a></li>
-			<li><a target="iframe_a" href="cssProject/border-radius_border.html">
-				<img src="images/stay.png"><span>CSS3绘制各种形状</span></a></li> -->
 			<li class="active"><a  target="iframe_a" href="cssProject/css3_loading.html">
-				<img src="images/stay.png"><span>CSS3载入动画</span></a></li>
+				<img src="images/stay.png"><span>CSS3载入动画</span></a>
+			</li>
 		</ul>
  	</div>
+
+
+
+ 	
  	<div id="backToTop">返回作品列表</div>
- 	<iframe id="main" src="cssProject/css3_loading.html" name="iframe_a">
+ 	<!-- <iframe id="main" src="cssProject/css3_loading.html" name="iframe_a">
 
- 	</iframe>
- 	<script type="text/javascript">
-		$(function(){
-			var top = document.getElementById('top');
-			var items = document.getElementsByTagName('li');
-			var iframe = document.getElementById('main');
-			
+ 	</iframe> -->
 
-
-
-			function scrollToAnimation(yPos,speed){
-				var tag =setInterval(function(){
-					scrollTo(0,pageYOffset+25);
-					if(pageYOffset >= yPos){
-						//停止滚动
-						clearInterval(tag);
-					}
-				},speed);
-				
-			}
-			function acitve(e){
-				for(var i = 0,len = items.length;i<len;i++){
-					removeClass(items[i],'active');
-				}
-				console.log('you click a li');
-				addClass(this,'active'); //tag this li
-
-				//页面滚动到iframe
-				//console.log(iframe.offsetTop);
-				scrollToAnimation(iframe.offsetTop,10);
-				console.log(iframe.firstChild);
-				console.log(iframe.childNodes[1]);
-				console.log(iframe.lastChild);
-				// iframe.style.height = iframe.
-			
-
-			}
-
-			for(var i=0;i<items.length;i++){
-				items[i].onclick = acitve;
-			}
-
-
-
-			//回到顶部按钮，
-			$("#backToTop").click(function(){
-				var tag = setInterval(function(){
-					console.log(pageYOffset);
-					scrollBy(0,-60)
-					if(pageYOffset<=50){
-						clearInterval(tag);
-						tag = setInterval(function(){
-							console.log(pageYOffset);
-							scrollBy(0,-6);
-							if(pageYOffset<=0){
-								clearInterval(tag);
-								//alert("成功到达");
-							}
-						},20);
-					}
-				},20);		
-			});
-
-			var bToTop = document.getElementById('backToTop');
-			window.onscroll = function(){
-				if(pageYOffset>=600){
-					top.style.display='none';
-					bToTop.style.display='block';
-				}else if (pageYOffset<600){
-					bToTop.style.display='none';
-					top.style.display='block';
-				}
-			};
-
-		});
-
-
-		    function hasClass(element, className) {
-		        return element.className.match(new RegExp('(\\s|^)'+className+'(\\s|$)'));
-		    }
-		    //添加一个class，如果不存在的话
-		    function addClass(element, className) {
-		        if (!hasClass(element, className)) {
-		            element.className += " "+className;
-		        }
-		    }
-		    //删除一个class，如果存在的话
-		    function removeClass(element, className) {
-		        if (hasClass(element, className)) {
-		            element.className = element.className.replace(
-		                    new RegExp('(\\s|^)'+className+'(\\s|$)'),' ');
-		        }
-		    }
-
-		
-
-	</script>
+ 	<script type="text/javascript" src="js/main.js"></script>
  </body>
 </html>
